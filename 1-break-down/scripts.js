@@ -22,11 +22,11 @@ function trace() {
 	var e_value = document.getElementById("e-value").value;
 	var e = cast(e_type, e_value);
 	
-	var s0 = { 
+	var s0 = {
 		a: [a_type, a_value],
 		b: [b_type, b_value],
 		c: [c_type, c_value],
-		b: [d_type, d_value],
+		d: [d_type, d_value],
 		e: [e_type, e_value],
 	};
 		
@@ -38,14 +38,14 @@ function trace() {
 	// do the logic
 	var s1;
 	try {
-		s1 = a > b;
+		s1 = b > c;
 	} catch(err) {
 		throw(err);
 	};
 
 	var s2;
 	try {
-		s2 = c >= d;
+		s2 = d >= e;
 	} catch(err) {
 		throw(err);
 	};
@@ -59,7 +59,7 @@ function trace() {
 
 	var sf;
 	try {
-		sf = e || s3;
+		sf = a || s3;
 	} catch(err) {
 		throw(err);
 	};
