@@ -1,6 +1,8 @@
 // a || ((b > c) && (d >= e))
 
 function trace() {
+	console.log("-----------------");
+
 	// read & clean user input
 	var a_type = document.getElementById("a-type").value;
 	var a_value = document.getElementById("a-value").value;
@@ -23,11 +25,11 @@ function trace() {
 	var e = cast(e_type, e_value);
 	
 	var s0 = {
-		a: [a_type, a_value],
-		b: [b_type, b_value],
-		c: [c_type, c_value],
-		d: [d_type, d_value],
-		e: [e_type, e_value],
+		a: {[a_type]: a},
+		b: {[b_type]: b},
+		c: {[c_type]: c},
+		d: {[d_type]: d},
+		e: {[e_type]: e}
 	};
 		
 	var expected_type = document.getElementById("expected-type").value;
@@ -66,7 +68,7 @@ function trace() {
 
 	// display to user
 	var s0_display = document.getElementById("s0");
-	s0_display.innerHTML = "check the console";
+	s0_display.innerHTML = "(inspect page)";
 	console.log(s0);
 
 	var s1_display = document.getElementById("s1");
@@ -96,8 +98,11 @@ function cast(type, value) {
     	return null;
 
     } else if (type == "Boolean") {
-    	// why is this not quite right?
-    	return Boolean(value);
+		if (value === "true") {
+			return true;
+		} else {
+			return false;
+		};
     };
     // functions return undefined by default
 };
