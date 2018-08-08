@@ -66,7 +66,7 @@ function trace() {
 
 	// display to user
 	var s0_display = document.getElementById("s0");
-	s0_display.innerHTML = JSON.stringify(s0);
+	s0_display.innerHTML = pritify_object(s0);
 
 	var s1_display = document.getElementById("s1");
 	s1_display.innerHTML = typeof s1 + ": " + s1;
@@ -85,7 +85,7 @@ function trace() {
 
 function cast(type, value) {
 
-	if (type == "Number") {
+    if (type == "Number") {
     	return Number(value);
 
     } else if (type == "String") {
@@ -116,4 +116,13 @@ function clear_table() {
 
 	var sf_display = document.getElementById("sf");
 	sf_display.innerHTML = "";
+};
+
+// https://stackoverflow.com/questions/1625208/print-content-of-javascript-object
+function pritify_object(obj) {
+	var out = '';
+	for (var prop in obj) {
+		out += prop + ': ' + obj[prop] + '\n';
+	};
+	return out;
 };
