@@ -23,11 +23,11 @@ function trace() {
 	var e = cast(e_type, e_value);
 	
 	var s0 = { 
-		a: {type: typeof a, value: a},
-		b: {type: typeof b, value: b},
-		c: {type: typeof c, value: c},
-		b: {type: typeof d, value: d},
-		e: {type: typeof e, value: e}
+		a: [a_type, a_value],
+		b: [b_type, b_value],
+		c: [c_type, c_value],
+		b: [d_type, d_value],
+		e: [e_type, e_value],
 	};
 		
 	var expected_type = document.getElementById("expected-type").value;
@@ -66,7 +66,8 @@ function trace() {
 
 	// display to user
 	var s0_display = document.getElementById("s0");
-	s0_display.innerHTML = pritify_object(s0);
+	s0_display.innerHTML = "check the console";
+	console.log(s0);
 
 	var s1_display = document.getElementById("s1");
 	s1_display.innerHTML = typeof s1 + ": " + s1;
