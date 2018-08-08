@@ -110,6 +110,9 @@ function clear_table() {
 
 	var s2_display = document.getElementById("s2");
 	s2_display.innerHTML = "";
+	
+	var s3_display = document.getElementById("s3");
+	s3_display.innerHTML = "";
 
 	var sf_display = document.getElementById("sf");
 	sf_display.innerHTML = "";
