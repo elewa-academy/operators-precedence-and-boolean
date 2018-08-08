@@ -124,11 +124,3 @@ function clear_table() {
 	sf_display.innerHTML = "";
 };
 
-// https://stackoverflow.com/questions/1625208/print-content-of-javascript-object
-function pritify_object(obj) {
-	var out = '';
-	for (var prop in obj) {
-		out += prop + ': ' + obj[prop] + '\n';
-	};
-	return out;
-};
